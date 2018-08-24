@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1st Try</title>
+    <style>
+        input.a{
+            font-weight:bold;
+            color: #ff0041;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Hello P-Page!</h1>
+<!-- function list -->
+<!-- function 1 -->
+<form method="post" action="HelloWorld.php">
+    <label for="hello">1.Try to input some words:</label>
+    <input type="text" id="hello" name="input1"/>
+    <input type="submit" value="try your words" name="submit"/>
+</form>
+<br/>
+<!-- function 2 -->
+<form action="TestDBConnection.php">
+    <label>2.Try DB Connection:</label>
+    <input type="submit" value="check" name="submit"/>
+</form>
+<br/>
+<!-- function 3 -->
+<form method="post" action="InsertIntoDB.php">
+    <label >3.Insert into DB this word:</label><br/>
+    <label for="iword">word1:</label><input type="text" name="input2" id="iword" />
+    <lebel for="iword2">word2:</lebel><input type="text" name="input3" id="iword2"/>
+    <input type="submit" value="try your words" name="submit" />
+</form>
+<form method="post" action="NewInsertIntoDB.php">
+    <input class="a" type="submit" value="Try the new one!"></span>
+</form>
+<br/>
+<!-- function 4 -->
+<form method='post' action="ShowDBData.php">
+    <label>4. Show the data in DB:</label>
+    <input type="submit" name="submit" value="check data" />
+</form>
+<br/>
+
+<!-- function 5 -->
+<form method="post" action="NewDeleteData.php">
+    <label>5. Delete the data in DB:</label>
+    <input type="submit" name="submit" value="delete data page"
+</form>
+<br>
+
+</body>
+
+</html>
