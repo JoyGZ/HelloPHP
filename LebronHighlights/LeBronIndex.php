@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../BootCSS/bootstrap.css">
 
-    <title>Hello, world!</title>
+    <title>詹姆斯的各种得分信息</title>
 </head>
 <body>
 
@@ -18,12 +18,31 @@
 <script src="../BootJS/popper.js"></script>
 <script src="../BootJS/bootstrap.js"></script>
 
+<!-- Navi Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./Pics/HomePageLogo.gif" width="75" height="63" class="d-inline-block align-content-center" alt="">
+        <b>James Scoreboard</b>
+    </a>
 
-<div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">欢迎你!</h4>
-    <p>这是一个测试工程，之前只是想着用来练习图片和ß各类数据库相关的php操作，但是还是想让它有一点点意义。</p>
-    <p class="mb-0">如果你也感兴趣，点击这里录入@KingJames相关的比赛信息吧！</p>
-</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="./LeBronIndex.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./AddJamesInfo.php">AddData </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
 <!-- Actually Content -->
 
 <?php
@@ -47,20 +66,25 @@
                 <?php
                     }
                 ?>
-
                 <div class="card-body">
                     <h5 class="card-title">O-Player:<?php echo $row['op_name']; ?></h5>
                     <p class="card-text">The O-Player scored <?php echo $row['op_score']; ?> points, but JAMES
                         got <?php echo $row['jscore']; ?> points!!</p>
                     <p class="card-text">
-                        <small class="text-muted"><?php echo $row['date']; ?></small>
-                    </p>
+                        <small class="text-muted"><?php echo $row['date'].' '; ?></small>
+                        <?php
+                        if ( (time() - strtotime($row['date'])) < 18000 ){
+                            ?>
+                            <span class="badge badge-danger">New!</span>
+                        <?php
+                        }
+                        ?>
+
+                    </>
                 </div>
             </div>
-
         <?php
             echo '<br/>';
-
     }
     mysqli_free_result($result);
     mysqli_close($dbc);
