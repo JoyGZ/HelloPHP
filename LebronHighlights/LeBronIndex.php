@@ -14,9 +14,7 @@ require_once('headpart.html');
     $result=mysqli_query($dbc,$query)
         or die('Error with query DB!');
     echo '<div class="card-columns">';
-    //$changecount=0;
     while($row=mysqli_fetch_array($result)) {
-        //$changecount=$changecount+1;
         ?>
             <div class="card">
                 <?php
