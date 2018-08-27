@@ -33,7 +33,7 @@
     <hr class="my-4">
     <p>这是PHP的第二个工程，将会完成一个更像真正工程的项目。含有图片管理、管理台、审核等内容。这个工程也会开始家在bootstrap前端组建。</p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="" role="button">跳转</a>
+        <a class="btn btn-primary btn-lg" href="./LebronHighlights/LeBronIndex.php" role="button">跳转</a>
     </p>
 </div>
 
