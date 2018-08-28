@@ -1,12 +1,15 @@
 <?php
+require_once('VarModel/Authorize.php')
+?>
+<?php
     /**
      * Created by PhpStorm.
      * User: JoyGZ
      * Date: 2018/8/27
      * Time: 下午3:00
      */
-    require_once('headpart.html');
-    require_once('PreVars.php');
+    require_once('VarModel/headpart.html');
+    require_once('VarModel/PreVars.php');
 ?>
 
 <?php
@@ -78,7 +81,7 @@
                         ?>
                 </div>
             </div>
-            <form method="post" action="removeJamesInfo.php">
+            <form method="post" action="RemoveJamesInfo.php">
                 <input type="hidden" name="jid" value="<?php echo $row['jid']; ?>">
                 <input type="hidden" name="jpic" value="<?php echo $row['op_pic'] ?>">
                 <div class="form-row">
@@ -99,5 +102,5 @@
 ?>
 
 <?php
-    require_once('endpart.html');
+    require_once('VarModel/endpart.html');
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require_once('headpart.html');
+    require_once('VarModel/headpart.html');
 ?>
 <!-- Actually Content -->
 <?php
@@ -12,7 +12,7 @@
         //pic鉴别是否正确
         $picflag = 0;
         //上传路径变量
-        require_once('PreVars.php');
+        require_once('VarModel/PreVars.php');
 
 
         if ((!empty($oname))&&(!empty($oscore))&&(!empty($jsocre))){
@@ -32,6 +32,10 @@
                         echo 'Error with upLoad pictures!';
                     }
                 }
+            }
+            if (!is_numeric($oscore)||!is_numeric($jsocre)||is_numeric($oname)){
+                echo '<div class="alert alert-warning" role="alert">Error with input format!</div>';
+                $picflag=1;
             }
             if ($picflag != 1){
                 $dbc=mysqli_connect(db_host,db_user,db_password,db_name,db_port)
@@ -109,5 +113,5 @@
 
 
 <?php
-require_once('endpart.html');
+require_once('VarModel/endpart.html');
 ?>
