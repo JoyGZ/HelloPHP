@@ -1,11 +1,14 @@
 <?php
+    require_once('VarModel/Authorize.php')
+?>
+<?php
 /**
  * Created by PhpStorm.
  * User: JoyGZ
  * Date: 2018/8/27
  * Time: 下午3:00
  */
-    require_once('headpart.html');
+    require_once('VarModel/headpart.html');
     ?>
 <div style="text-align: center">
     <h2>JI Admin System<span class="badge badge-secondary">New</span></h2>
@@ -23,7 +26,7 @@
     </thead>
     <tbody>
     <?php
-        require_once('PreVars.php');
+        require_once('VarModel/PreVars.php');
         //connect to DB
         $dbc=mysqli_connect(db_host,db_user,db_password,db_name,db_port)
         or die('Error with connect to the DB!');
@@ -39,7 +42,14 @@
             <td><?php echo $row['op_name']; ?></td>
             <td><?php echo $row['op_score']; ?></td>
             <td><?php echo $row['date']; ?></td>
-            <td><a href="removeJamesInfo.php?id=<?php echo $row['jid'];?>">remove</a> </td>
+            <td><a href="RemoveJamesInfo.php?id=<?php echo $row['jid'];?>">remove</a>
+                <?php
+                    if ($row['ojbk']!='N'){
+                ?>
+                 / <a href="ValidateJamesInfo.php?id=<?php echo $row['jid'];?>">validate</a></td>
+            <?php
+            }
+            ?>
         </tr>
         <?php
     }
@@ -48,5 +58,5 @@
 </table>
 
 <?php
-    require_once('endpart.html');
+    require_once('VarModel/endpart.html');
 ?>
