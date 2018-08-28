@@ -1,11 +1,11 @@
 <?php
-require_once('headpart.html');
+require_once('VarModel/headpart.html');
 ?>
 
 <!-- Actually Content -->
 
 <?php
-    require_once('PreVars.php');
+    require_once('VarModel/PreVars.php');
     //connect to DB
     $dbc=mysqli_connect(db_host,db_user,db_password,db_name,db_port)
         or die('Error with connect to the DB!');
@@ -25,7 +25,14 @@ require_once('headpart.html');
                     }
                 ?>
                 <div class="card-body">
-                    <h5 class="card-title">O-Player:<?php echo $row['op_name']; ?></h5>
+                    <h5 class="card-title">O-Player:<?php echo $row['op_name']; ?>
+                    <?php
+                        if($row['ojbk']=='Y'){
+                    ?>
+                        <span class="badge badge-success">Validated</span></h5>
+                    <?php
+                        }
+                    ?>
                     <p class="card-text">The O-Player scored <?php echo $row['op_score']; ?> points, but JAMES
                         got <?php echo $row['jscore']; ?> points!!</p>
                     <p class="card-text">
@@ -48,5 +55,5 @@ require_once('headpart.html');
 ?>
 
 <?php
-require_once('endpart.html');
+require_once('VarModel/endpart.html');
 ?>
