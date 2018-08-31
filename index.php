@@ -35,6 +35,13 @@
     <p class="lead">
         <a class="btn btn-primary btn-lg" href="./LebronHighlights/LeBronIndex.php" role="button">跳转</a>
     </p>
+
+    </p>
+    <hr class="my-4">
+    <p>这是PHP的第三个工程，将会在bootstrap基础之上，实现各种各样细致的功能。</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="./SwitchGamesInfo/SGIindex.php" role="button">跳转</a>
+    </p>
 </div>
 
 </body>
